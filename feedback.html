@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反馈帮助 - 你的秘密花园</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="bg-gradient-to-r from-green-50/80 via-blue-50/80 to-purple-50/80 backdrop-blur-sm shadow-lg fixed w-full z-50 border-b border-white/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-14">
+                <div class="flex items-center">
+                    <div class="relative group">
+                        <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-green-600 via-teal-500 to-blue-500 bg-clip-text text-transparent group-hover:from-green-700 group-hover:via-teal-600 group-hover:to-blue-600 transition-all duration-500">
+                            你的秘密花园
+                        </span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" 
+                       class="relative px-5 py-2 rounded-full text-gray-700 hover:text-green-700
+                              hover:bg-gradient-to-r hover:from-green-500/10 hover:to-blue-500/10 
+                              transition-all duration-300">
+                        首页
+                    </a>
+                    <a href="treehole.html" 
+                       class="relative px-5 py-2 rounded-full text-gray-700 hover:text-green-700
+                              hover:bg-gradient-to-r hover:from-green-500/10 hover:to-blue-500/10 
+                              transition-all duration-300">
+                        树洞
+                    </a>
+                    <a href="soulsoup.html" 
+                       class="relative px-5 py-2 rounded-full text-gray-700 hover:text-green-700
+                              hover:bg-gradient-to-r hover:from-green-500/10 hover:to-blue-500/10 
+                              transition-all duration-300">
+                        妙妙屋
+                    </a>
+                    <a href="feedback.html" 
+                       class="relative px-5 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-blue-500/10 text-green-700 font-medium 
+                              hover:from-green-500/20 hover:to-blue-500/20 transition-all duration-300 
+                              after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/2 after:h-0.5 
+                              after:bg-gradient-to-r after:from-green-500 after:to-blue-500 after:opacity-0 
+                              hover:after:opacity-100 after:transition-all after:duration-300">
+                        反馈帮助
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 添加装饰性光晕效果 -->
+        <div class="absolute inset-0 bg-gradient-to-r from-green-100/10 via-blue-100/10 to-purple-100/10 opacity-50 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+    </nav>
+
+    <!-- 添加占位符 -->
+    <div class="h-14"></div>
+
+    <!-- 页面标题 -->
+    <div class="bg-gradient-to-b from-green-50 to-green-100 py-16 relative">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h1 class="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-600">
+                帮助与反馈
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed">
+                我们重视每一位用户的体验和建议<br>
+                您的反馈是我们进步的动力
+            </p>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- 常见问题 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500">
+                    常见问题
+                </span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- FAQ 卡片 1 -->
+                <div class="bg-gradient-to-br from-white to-green-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-green-100">
+                    <button class="faq-toggle w-full flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-800 hover:text-green-600 transition duration-200">如何发布故事？</h3>
+                        <svg class="w-5 h-5 text-green-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden mt-4 text-gray-600 leading-relaxed">
+                        在树洞页面，你可以直接点击"分享你的故事"按钮，写下你想说的话，然后点击发布即可。所有故事都是匿名的，请放心分享。
+                    </div>
+                </div>
+
+                <!-- FAQ 卡片 2 -->
+                <div class="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-blue-100">
+                    <button class="faq-toggle w-full flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-800 hover:text-blue-600 transition duration-200">如何使用妙妙屋的功能？</h3>
+                        <svg class="w-5 h-5 text-blue-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden mt-4 text-gray-600 leading-relaxed">
+                        妙妙屋提供了冥想、音乐、艺术等多种心理疗愈方式。你可以根据自己的需要选择合适的内容，跟随指引进行练习。每个功能都配有详细的使用说明。
+                    </div>
+                </div>
+
+                <!-- FAQ 卡片 3 -->
+                <div class="bg-gradient-to-br from-white to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-purple-100">
+                    <button class="faq-toggle w-full flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-800 hover:text-purple-600 transition duration-200">隐私安全如何保护？</h3>
+                        <svg class="w-5 h-5 text-purple-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden mt-4 text-gray-600 leading-relaxed">
+                        我们高度重视用户隐私，所有分享的内容都是匿名的。我们不会收集任何个人身份信息，也不会将用户数据用于其他用途。你可以安心使用我们的平台。
+                    </div>
+                </div>
+
+                <!-- FAQ 卡片 4 -->
+                <div class="bg-gradient-to-br from-white to-rose-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-rose-100">
+                    <button class="faq-toggle w-full flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="text-lg font-semibold text-gray-800 hover:text-rose-600 transition duration-200">遇到不当内容怎么办？</h3>
+                        <svg class="w-5 h-5 text-rose-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden mt-4 text-gray-600 leading-relaxed">
+                        如果你发现任何不当或违规内容，请立即点击内容下方的举报按钮，或通过反馈表单告诉我们。我们会及时处理，维护良好的社区环境。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 反馈表单 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500">
+                    提交反馈
+                </span>
+            </h2>
+            <div class="max-w-2xl mx-auto">
+                <form id="feedbackForm" class="bg-gradient-to-br from-white to-blue-50 p-8 rounded-xl shadow-lg border border-blue-100">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="feedbackType">
+                                反馈类型
+                            </label>
+                            <select id="feedbackType" 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-green-500 bg-white">
+                                <option value="suggestion">功能建议</option>
+                                <option value="bug">问题反馈</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="feedbackContent">
+                                反馈内容
+                            </label>
+                            <textarea id="feedbackContent" 
+                                      rows="5" 
+                                      placeholder="请详细描述您的建议或遇到的问题..."
+                                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-green-500 bg-white"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2" for="contactEmail">
+                                联系邮箱（选填）
+                            </label>
+                            <input type="email" 
+                                   id="contactEmail" 
+                                   placeholder="example@email.com"
+                                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-green-500 bg-white">
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg 
+                                       hover:from-green-600 hover:to-blue-600 transition duration-300 
+                                       transform hover:scale-[1.02] shadow-md hover:shadow-lg">
+                            提交反馈
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section>
+            <h2 class="text-3xl font-bold text-center mb-12">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500">
+                    联系我们
+                </span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-white to-purple-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-purple-100 text-center">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">电子邮件</h3>
+                    <p class="text-gray-600">2781594902@qq.com</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-white to-rose-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-rose-100 text-center">
+                    <div class="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">在线客服</h3>
+                    <p class="text-gray-600">周一至周五 9:00-18:00</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-white to-amber-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border border-amber-100 text-center">
+                    <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">帮助中心</h3>
+                    <p class="text-gray-600">查看常见问题解答</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/feedback.js"></script>
+</body>
+</html> 

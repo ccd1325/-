@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>树洞 - 你的秘密花园</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/floating.css">
+</head>
+<body class="bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="bg-gradient-to-r from-green-50/80 via-blue-50/80 to-purple-50/80 backdrop-blur-sm shadow-lg fixed w-full z-50 border-b border-white/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-14">
+                <div class="flex items-center">
+                    <div class="relative group">
+                        <span class="text-xl font-bold tracking-wider bg-gradient-to-r from-green-600 via-teal-500 to-blue-500 bg-clip-text text-transparent group-hover:from-green-700 group-hover:via-teal-600 group-hover:to-blue-600 transition-all duration-500">
+                            你的秘密花园
+                        </span>
+                        <div class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-green-500 to-blue-500 group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" 
+                       class="relative px-5 py-2 rounded-full text-gray-700 hover:text-green-700
+                              hover:bg-gradient-to-r hover:from-green-500/10 hover:to-blue-500/10 
+                              transition-all duration-300">
+                        首页
+                    </a>
+                    <a href="treehole.html" 
+                       class="relative px-5 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-blue-500/10 text-green-700 font-medium 
+                              hover:from-green-500/20 hover:to-blue-500/20 transition-all duration-300
+                              after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/2 after:h-0.5 
+                              after:bg-gradient-to-r after:from-green-500 after:to-blue-500 after:opacity-0 
+                              hover:after:opacity-100 after:transition-all after:duration-300">
+                        树洞
+                    </a>
+                    <a href="soulsoup.html" 
+                       class="relative px-5 py-2 rounded-full text-gray-700 hover:text-green-700
+                              hover:bg-gradient-to-r hover:from-green-500/10 hover:to-blue-500/10 
+                              transition-all duration-300">
+                        妙妙屋
+                    </a>
+                    <a href="feedback.html" 
+                       class="relative px-5 py-2 rounded-full text-gray-700 hover:text-green-700
+                              hover:bg-gradient-to-r hover:from-green-500/10 hover:to-blue-500/10 
+                              transition-all duration-300">
+                        反馈帮助
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 添加装饰性光晕效果 -->
+        <div class="absolute inset-0 bg-gradient-to-r from-green-100/10 via-blue-100/10 to-purple-100/10 opacity-50 pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+    </nav>
+
+    <!-- 添加占位符 -->
+    <div class="h-14"></div>
+
+    <!-- 飘窗容器 -->
+    <div id="floating-emotions" class="fixed inset-0 pointer-events-none z-50">
+        <!-- 飘窗将通过 JavaScript 动态生成 -->
+    </div>
+
+    <!-- 页面标题和背景 -->
+    <div class="relative bg-gradient-to-b from-green-50 to-green-100 py-16" 
+         style="background-image: url('images/treehole/bg.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
+        <div class="relative max-w-4xl mx-auto text-center px-4">
+            <h1 class="text-5xl font-bold text-white mb-6 drop-shadow-lg tracking-wide">
+                树洞倾诉，让心灵找到归宿
+            </h1>
+            <p class="text-xl text-gray-100 drop-shadow-lg font-light leading-relaxed">
+                在这里，你可以匿名分享你的故事，倾听他人的心声
+            </p>
+        </div>
+        <!-- 添加渐变过渡效果 -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <!-- 发帖区域 -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-12 transform hover:shadow-xl transition duration-300">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                <svg class="w-6 h-6 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+                </svg>
+                分享你的故事
+            </h2>
+            <form id="postForm" class="space-y-6">
+                <!-- 表情选择区域 -->
+                <div class="flex flex-wrap gap-4 mb-4">
+                    <button type="button" class="emoji-btn p-2 hover:bg-gray-100 rounded-lg transition duration-200">
+                        <img src="images/emotions/happy.png" alt="开心" class="w-8 h-8">
+                    </button>
+                    <button type="button" class="emoji-btn p-2 hover:bg-gray-100 rounded-lg transition duration-200">
+                        <img src="images/emotions/sad.png" alt="难过" class="w-8 h-8">
+                    </button>
+                    <button type="button" class="emoji-btn p-2 hover:bg-gray-100 rounded-lg transition duration-200">
+                        <img src="images/emotions/angry.png" alt="生气" class="w-8 h-8">
+                    </button>
+                    <button type="button" class="emoji-btn p-2 hover:bg-gray-100 rounded-lg transition duration-200">
+                        <img src="images/emotions/calm.png" alt="平静" class="w-8 h-8">
+                    </button>
+                </div>
+
+                <!-- 文本输入区域 -->
+                <textarea id="postContent" 
+                         rows="4" 
+                         placeholder="说出你的故事..." 
+                         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-green-500 bg-gray-50 transition duration-200"></textarea>
+
+                <!-- 图片上传区域 -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <label for="imageUpload" class="flex items-center px-4 py-2 bg-gray-100 rounded-lg cursor-pointer hover:bg-gray-200 transition duration-200">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            添加图片
+                        </label>
+                        <input type="file" 
+                               id="imageUpload" 
+                               accept="image/*" 
+                               class="hidden"
+                               multiple>
+                        <span id="imageCount" class="text-sm text-gray-500"></span>
+                    </div>
+                    <!-- 图片预览区域 -->
+                    <div id="imagePreview" class="grid grid-cols-3 gap-4">
+                        <!-- 预览图片将在这里显示 -->
+                    </div>
+                </div>
+
+                <!-- 发布按钮 -->
+                <button type="submit" 
+                        class="w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg 
+                               hover:from-green-600 hover:to-green-700 transition duration-300 shadow-md hover:shadow-lg text-lg">
+                    发布故事
+                </button>
+            </form>
+
+            <!-- 温馨提示 -->
+            <div class="mt-6 bg-green-50 p-4 rounded-lg">
+                <h3 class="text-green-800 font-semibold mb-2">温馨提示：</h3>
+                <ul class="text-green-700 space-y-1 text-sm">
+                    <li>• 请保持友善，互相理解和支持</li>
+                    <li>• 分享时注意保护个人隐私</li>
+                    <li>• 可以添加图片让故事更生动</li>
+                    <li>• 可以添加表情表达心情</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 筛选区域 -->
+        <div class="bg-white rounded-xl shadow-lg p-6 mb-12">
+            <div class="flex flex-wrap gap-4 justify-between items-center">
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-6 py-3 rounded-full bg-gradient-to-r from-green-500 to-green-600 text-white font-medium 
+                                  shadow-md hover:shadow-lg transition duration-300 hover:from-green-600 hover:to-green-700" 
+                            data-category="all">
+                        全部故事
+                    </button>
+                    <button class="px-6 py-3 rounded-full bg-gray-100 hover:bg-gradient-to-r hover:from-green-500 hover:to-green-600 
+                                  hover:text-white transition duration-300" 
+                            data-category="生活">
+                        生活
+                    </button>
+                    <button class="px-6 py-3 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition duration-200" 
+                            data-category="工作">
+                        工作
+                    </button>
+                    <button class="px-6 py-3 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition duration-200" 
+                            data-category="学习">
+                        学习
+                    </button>
+                    <button class="px-6 py-3 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition duration-200" 
+                            data-category="情感">
+                        情感
+                    </button>
+                    <button class="px-6 py-3 rounded-full bg-gray-100 hover:bg-green-600 hover:text-white transition duration-200" 
+                            data-category="其他">
+                        其他
+                    </button>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-gray-600">排序：</span>
+                    <select id="sortOrder" class="px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                        <option value="newest">最新发布</option>
+                        <option value="mostLiked">最多点赞</option>
+                        <option value="mostCommented">最多评论</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- 故事列表 -->
+        <div id="stories-container" class="space-y-8">
+            <!-- 故事卡片模板 -->
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center space-x-3">
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
+                            分类
+                        </span>
+                        <span class="text-sm text-gray-500">匿名用户</span>
+                    </div>
+                    <span class="text-sm text-gray-500">发布时间</span>
+                </div>
+                <p class="text-gray-600 mb-4">故事内容</p>
+                <div class="flex justify-between items-center text-sm text-gray-500">
+                    <div class="flex items-center space-x-6">
+                        <button class="flex items-center space-x-2 hover:text-green-600 transition duration-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                            <span>点赞数</span>
+                        </button>
+                        <button class="flex items-center space-x-2 hover:text-green-600 transition duration-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            <span>评论数</span>
+                        </button>
+                    </div>
+                    <button class="text-green-600 hover:text-green-700 transition duration-200">
+                        分享故事
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 评论模态框 -->
+    <div id="commentsModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">评论</h2>
+                <button onclick="ui.closeModal('commentsModal')" 
+                        class="text-gray-600 hover:text-gray-800 transition duration-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="commentsContainer" class="max-h-96 overflow-y-auto mb-6 space-y-4">
+                <!-- 评论将通过JavaScript动态加载 -->
+            </div>
+            <form id="commentForm" class="space-y-4">
+                <textarea id="commentContent" 
+                         rows="3" 
+                         placeholder="写下你的评论..." 
+                         class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-green-500 bg-gray-50"></textarea>
+                <button type="submit" 
+                        class="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 
+                               transition duration-200 shadow-md hover:shadow-lg">
+                    发表评论
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/treehole.js"></script>
+</body>
+</html> 
