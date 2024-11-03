@@ -1,0 +1,55 @@
+.floating-emotion {
+    position: absolute;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #666;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    z-index: 1000;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    animation: float 20s linear infinite;
+}
+
+.floating-emotion:hover {
+    opacity: 0;
+    transform: scale(0.5) rotate(15deg);
+    filter: blur(5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(120vh) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(60vh) translateX(30px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(-50px) translateX(0) rotate(-5deg);
+    }
+}
+
+/* 不同类型的情绪使用不同的颜色 */
+.floating-emotion[data-type="study"] {
+    background: rgba(255, 235, 235, 0.95);
+    color: #ff4d4d;
+}
+
+.floating-emotion[data-type="work"] {
+    background: rgba(235, 245, 255, 0.95);
+    color: #4d79ff;
+}
+
+.floating-emotion[data-type="life"] {
+    background: rgba(235, 255, 240, 0.95);
+    color: #4dff77;
+}
+
+.floating-emotion[data-type="social"] {
+    background: rgba(255, 245, 235, 0.95);
+    color: #ff884d;
+} 

@@ -1,0 +1,96 @@
+#floating-emotions {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.floating-emotion {
+    position: absolute;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #666;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: all 0.8s ease;
+    z-index: 10000;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.floating-emotion:hover {
+    opacity: 0;
+    transform: scale(0.9);
+    filter: blur(2px);
+}
+
+/* 从左边出现的动画 */
+@keyframes floatFromLeft {
+    from { transform: translate(-100vw, 50vh); }
+    to { transform: translate(100vw, 50vh); }
+}
+
+/* 从右边出现的动画 */
+@keyframes floatFromRight {
+    from { transform: translate(100vw, 50vh); }
+    to { transform: translate(-100vw, 50vh); }
+}
+
+/* 从上面出现的动画 */
+@keyframes floatFromTop {
+    from { transform: translate(50vw, -100vh); }
+    to { transform: translate(50vw, 100vh); }
+}
+
+/* 从下面出现的动画 */
+@keyframes floatFromBottom {
+    from { transform: translate(50vw, 100vh); }
+    to { transform: translate(50vw, -100vh); }
+}
+
+/* 不同类型的情绪使用不同的颜色 */
+.floating-emotion[data-type="emotion"] {
+    background: linear-gradient(135deg, rgba(255, 192, 203, 0.95), rgba(255, 182, 193, 0.95));
+    color: #d81b60;
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.2);
+}
+
+.floating-emotion[data-type="study"] {
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.95), rgba(135, 206, 235, 0.95));
+    color: #1565c0;
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.2);
+}
+
+.floating-emotion[data-type="work"] {
+    background: linear-gradient(135deg, rgba(144, 238, 144, 0.95), rgba(152, 251, 152, 0.95));
+    color: #2e7d32;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+}
+
+.floating-emotion[data-type="life"] {
+    background: linear-gradient(135deg, rgba(255, 218, 185, 0.95), rgba(255, 228, 196, 0.95));
+    color: #ef6c00;
+    box-shadow: 0 4px 15px rgba(239, 108, 0, 0.2);
+}
+
+/* 添加悬停效果 */
+.floating-emotion:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
+}
+
+/* 添加动画过渡效果 */
+.floating-emotion {
+    transition: all 0.3s ease-in-out;
+}
+
+/* 添加文字阴影效果 */
+.floating-emotion {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+} 
